@@ -63,13 +63,19 @@ public class DoubleLinkedLists25 {
         System.out.println("Node berhasil disisipkan setelah NIM " + keyNim);
     }
 
-   public void print() {
+    public void print() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong.");
+            return;
+        }
+
         Node25 current = head;
         while (current != null) {
             current.data.tampil();
             current = current.next;
         }
     }
+
     public Node25 search(String nim) {
         Node25 current = head;
         while (current != null) {
@@ -82,28 +88,37 @@ public class DoubleLinkedLists25 {
     }
 
     public void removeFirst() {
-        if (isEmpty()) {
-            System.out.println("Linked List masih kosong!");
-            return;
-        }
-        if (head == tail) {
-            head = tail = null;
-        } else {
-            head = head.next;
-            head.prev = null;
-        }
+    if (isEmpty()) {
+        System.out.println("List kosong, tidak bisa dihapus.");
+        return;
     }
 
-    public void removeLast() {
-        if (isEmpty()) {
-            System.out.println("Linked List masih kosong!");
-            return;
-        }
-        if (head == tail) {
-            head = tail = null;
-        } else {
-            tail = tail.prev;
-            tail.next = null;
-        }
+    Mahasiswa25 tmp = head.data;
+    if (head == tail) {
+        head = tail = null;
+    } else {
+        head = head.next;
+        head.prev = null;
     }
+         System.out.println("Data sudah berhasil dihapus. Data yang terhapus adalah:");
+        tmp.tampil();
+}
+
+public void removeLast() {
+        if (isEmpty()) {
+         System.out.println("List kosong, tidak bisa dihapus.");
+        return;
+     }
+
+    Mahasiswa25 tmp = tail.data;
+    if (head == tail) {
+        head = tail = null;
+    } else {
+        tail = tail.prev;
+        tail.next = null;
+    }
+    System.out.println("Data sudah berhasil dihapus. Data yang terhapus adalah:");
+    tmp.tampil();
+    }
+
 }
