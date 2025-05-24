@@ -9,7 +9,7 @@ public class Node25{
         this.data = data;
         this.prev = null;
         this.next = null;
-    } 
+     } 
 }
 
     
