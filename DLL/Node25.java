@@ -1,4 +1,5 @@
 package DLL;
+
 public class Node25{
     Mahasiswa25 data;
     Node25 prev;
